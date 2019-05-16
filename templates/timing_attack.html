@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>timing_attack</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page">
+    <div class="metanav">
+        {% if error %}
+        <p class=error><strong>Looks like you tried to guess a hash but wrongly</strong> 
+        {% else %}
+            Hello, {{ user }}.
+    
+            {% if admin %}
+            Access granted
+            {% else %}
+            Hint: Pass <pre>?password=...&user=...</pre> or <pre>?password=...</pre> to get access. Can you guess it?
+            {% endif %}
+        {% endif %}
+    </div>
+    </div>
+ </body>
+
+
+

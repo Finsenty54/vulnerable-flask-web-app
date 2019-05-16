@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>yaml_view</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page">
+    <div class="metanav">
+    <form action = "/yaml_handle" method = "POST" enctype="multipart/form-data">
+        <h2>Here is an interesting quote for you: </h2>
+        <h2>
+          Man proposes, God disposes.
+        </h2>
+        <br/>
+        <br/>
+        <h1>YOURS</h1>
+           <input type = "file" name = "file" />
+          
+           <input type = "submit"/>
+      </form>
+    {% if name %}
+    <h1>Result</h1>
+  	<h2>Here is an interesting quote for you: </h2>
+  	<div class="error">
+    {{name}}
+    </div>
+    {% endif %}
+    </div>
+    </div>
+ </body>

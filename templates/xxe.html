@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>executive</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page">
+    <div class="metanav">
+    <form action = "/xxe" method = "POST">
+       <p><h3>Enter xml to parse</h3></p>
+       <textarea class="input" name="xml" cols="40" rows="5"></textarea>
+       <p><input type = 'submit' value = 'Parse'/></p>
+    </form>
+    </div>
+    {% if parsed_xml %}
+        <p class=error><strong>result:</strong> {{parsed_xml}}
+    {% endif %}
+    {% if file %}
+        <p class=error><strong>result:</strong> {{file}}
+    {% endif %}
+    </div>
+ </body>
+
+

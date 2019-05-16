@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>deserialisation</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page">
+    <div class="metanav">
+            <form action = "/cookie" method = "POST">
+                <p><h3>Enter value to be stored in cookie</h3></p>
+                <p><input type = 'text' name = 'value'/></p>
+                <p><input type = 'submit' value = 'Set Cookie'/></p>
+             </form>
+    </div>
+    {% if cookieValue %}
+        <p class=error><strong>Cookie value:</strong> {{cookieValue}}
+    {% endif %}
+    {% if detect %}
+        <p class=error><strong>encode value:</strong> {{detect}}
+    {% endif %}
+    {% if cookies %}
+        <p class=error><strong>cookies value:</strong> {{cookies}}
+    {% endif %}
+    </div>
+ </body>
+
+

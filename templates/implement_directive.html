@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>executive</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <h1>input ip you want to find where it belongs out</h1>
+        <div class="metanav">
+            <form method="POST">
+                <dl>
+                    <dt><label for="IP"><strong>IP</strong></label>
+                    <dd><input name="ip" id="ip" required>
+                    <dt><input type="submit" name="submit" id="submit" value="Submit">
+                </dl>
+            </form>
+        </div>
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+        {% if commandResult %}
+        <p class=error><strong>commandResult</strong> {{ commandResult }}
+        {% endif %}
+    </div>
+</body>
+
+
+
